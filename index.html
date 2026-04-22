@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Guestbook - Villa Astella</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #FDFBF7; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .active-tab { border-bottom: 3px solid #10B981; color: #065F46; font-weight: 600; }
+        
+        /* Modal Style for WeChat QR */
+        #wechatModal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+        .modal-content { background-color: white; margin: 15% auto; padding: 20px; border-radius: 20px; width: 80%; max-width: 300px; text-align: center; }
+    </style>
+</head>
+<body class="pb-24 text-center">
+
+    <header class="bg-cover bg-center text-white py-16 px-6 shadow-lg relative" 
+            style="background-image: url('image_5300dd.jpg');"> <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl font-bold tracking-tight">VILLA ASTELLA</h1>
+            <p class="text-emerald-50 text-xs mt-1 font-semibold uppercase tracking-wide">
+                Host: 085723966466 (Nisa) 
+                <span class="block mt-1">
+                    <i class="fab fa-whatsapp"></i> WhatsApp & 
+                    <button onclick="toggleWeChat()" class="underline"><i class="fab fa-weixin"></i> WeChat</button>
+                </span>
+            </p>
+        </div>
+    </header>
+
+    <nav class="flex justify-around bg-white shadow-md sticky top-0 z-20 border-b border-gray-100 overflow-x-auto">
+        <button onclick="openTab(event, 'home')" class="tab-link px-6 py-4 text-gray-400 active-tab">Home</button>
+        <button onclick="openTab(event, 'guide')" class="tab-link px-6 py-4 text-gray-400">Villa Guide</button>
+        <button onclick="openTab(event, 'explore')" class="tab-link px-6 py-4 text-gray-400">Island Tour & Rent</button>
+    </nav>
+
+    <div id="wechatModal" onclick="toggleWeChat()">
+        <div class="modal-content">
+            <p class="text-gray-800 font-bold mb-4">Scan WeChat QR</p>
+            <img src="WhatsApp Image 2026-04-22 at 8.42.17 PM.jpeg" alt="WeChat QR" class="w-full h-auto rounded-lg">
+            <p class="text-xs text-gray-500 mt-4 underline">Tap to close</p>
+        </div>
+    </div>
+
+    <main class="max-w-md mx-auto p-5">
+
+        <div id="home" class="tab-content active space-y-6">
+            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                <img src="image_489ebc.jpg" class="w-full h-56 object-cover">
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold text-emerald-900">Welcome Home!</h2>
+                <p class="text-gray-600 mt-3 text-sm leading-relaxed">Thank you for choosing Villa Astella. We hope you have an unforgettable stay in Nusa Penida.</p>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100 flex items-start space-x-3 text-left">
+                <i class="fas fa-motorcycle text-blue-600 mt-1"></i>
+                <div>
+                    <p class="font-bold text-blue-900 text-sm">Free Motorbike for Errands</p>
+                    <p class="text-xs text-blue-800 leading-snug mt-1 italic">If you need to use a motorbike for nearby errands like going to the minimarket, pharmacy or getting food, feel free to borrow ours (free of charge) 🙏🏻😊</p>
+                </div>
+            </div>
+
+            <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100 flex items-start space-x-3 text-left">
+                <i class="fas fa-gift text-emerald-600 mt-1"></i>
+                <div>
+                    <p class="font-bold text-emerald-900 text-sm">Complimentary for you</p>
+                    <p class="text-xs text-emerald-800 leading-snug">All food and beverages in the kitchen are provided as our welcoming gesture for you to enjoy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="guide" class="tab-content space-y-4">
+            <h3 class="text-xl font-bold text-emerald-900 mb-4">Essential Info</h3>
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-50 p-3 rounded-xl text-blue-600"><i class="fas fa-wifi"></i></div>
+                    <div class="text-left">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">WiFi: astella</p>
+                        <p class="font-bold text-gray-800">holidat123</p>
+                    </div>
+                </div>
+                <button onclick="navigator.clipboard.writeText('holidat123')" class="text-emerald-600 text-xs font-bold uppercase">Copy</button>
+            </div>
+        </div>
+
+        <div id="explore" class="tab-content space-y-6">
+            <h3 class="text-xl font-bold text-emerald-900 px-1 text-left">Scooter Rental</h3>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+                <img src="WhatsApp Image 2026-04-22 at 8.29.29 PM.jpeg" class="w-full h-auto rounded-lg mb-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-left">
+                        <p class="font-bold text-gray-800">NMAX 155 / Vario 125</p>
+                        <p class="text-emerald-600 font-bold text-xs">Starting from IDR 80k / day</p>
+                    </div>
+                    <a href="https://wa.me/6285723966466" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase">Rent Now</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <a href="https://wa.me/6285723966466" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) { tabContent[i].classList.remove("active"); }
+            tabLinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tabLinks.length; i++) { tabLinks[i].classList.remove("active-tab"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active-tab");
+        }
+        function toggleWeChat() {
+            var modal = document.getElementById("wechatModal");
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
