@@ -12,8 +12,6 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .active-tab { border-bottom: 3px solid #10B981; color: #065F46; font-weight: 600; }
-        
-        /* Modal Style for WeChat QR */
         #wechatModal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
         .modal-content { background-color: white; margin: 15% auto; padding: 20px; border-radius: 20px; width: 80%; max-width: 300px; text-align: center; }
     </style>
@@ -21,7 +19,8 @@
 <body class="pb-24 text-center">
 
     <header class="bg-cover bg-center text-white py-16 px-6 shadow-lg relative" 
-            style="background-image: url('image_5300dd.jpg');"> <div class="absolute inset-0 bg-black/40"></div>
+            style="background-image: url('https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1000&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10">
             <h1 class="text-4xl font-bold tracking-tight">VILLA ASTELLA</h1>
             <p class="text-emerald-50 text-xs mt-1 font-semibold uppercase tracking-wide">
@@ -34,7 +33,7 @@
         </div>
     </header>
 
-    <nav class="flex justify-around bg-white shadow-md sticky top-0 z-20 border-b border-gray-100 overflow-x-auto">
+    <nav class="flex justify-around bg-white shadow-md sticky top-0 z-20 border-b border-gray-100">
         <button onclick="openTab(event, 'home')" class="tab-link px-6 py-4 text-gray-400 active-tab">Home</button>
         <button onclick="openTab(event, 'guide')" class="tab-link px-6 py-4 text-gray-400">Villa Guide</button>
         <button onclick="openTab(event, 'explore')" class="tab-link px-6 py-4 text-gray-400">Island Tour & Rent</button>
@@ -43,16 +42,15 @@
     <div id="wechatModal" onclick="toggleWeChat()">
         <div class="modal-content">
             <p class="text-gray-800 font-bold mb-4">Scan WeChat QR</p>
-            <img src="WhatsApp Image 2026-04-22 at 8.42.17 PM.jpeg" alt="WeChat QR" class="w-full h-auto rounded-lg">
+            <img src="https://i.ibb.co/3mN9xV4/wechat-qr.jpg" alt="WeChat QR" class="w-full h-auto rounded-lg">
             <p class="text-xs text-gray-500 mt-4 underline">Tap to close</p>
         </div>
     </div>
 
     <main class="max-w-md mx-auto p-5">
-
         <div id="home" class="tab-content active space-y-6">
             <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="image_489ebc.jpg" class="w-full h-56 object-cover">
+                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover">
             </div>
 
             <div>
@@ -80,9 +78,9 @@
         <div id="guide" class="tab-content space-y-4">
             <h3 class="text-xl font-bold text-emerald-900 mb-4">Essential Info</h3>
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 text-left">
                     <div class="bg-blue-50 p-3 rounded-xl text-blue-600"><i class="fas fa-wifi"></i></div>
-                    <div class="text-left">
+                    <div>
                         <p class="text-[10px] text-gray-400 uppercase font-bold">WiFi: astella</p>
                         <p class="font-bold text-gray-800">holidat123</p>
                     </div>
@@ -94,17 +92,16 @@
         <div id="explore" class="tab-content space-y-6">
             <h3 class="text-xl font-bold text-emerald-900 px-1 text-left">Scooter Rental</h3>
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <img src="WhatsApp Image 2026-04-22 at 8.29.29 PM.jpeg" class="w-full h-auto rounded-lg mb-4">
+                <img src="https://www.astra-honda.com/images/product/v-125/home-point-1.png" class="w-full h-auto rounded-lg mb-4">
                 <div class="flex justify-between items-center">
                     <div class="text-left">
-                        <p class="font-bold text-gray-800">NMAX 155 / Vario 125</p>
+                        <p class="font-bold text-gray-800 text-sm">NMAX 155 / Vario 125</p>
                         <p class="text-emerald-600 font-bold text-xs">Starting from IDR 80k / day</p>
                     </div>
-                    <a href="https://wa.me/6285723966466" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase">Rent Now</a>
+                    <a href="https://wa.me/6285723966466" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase">Rent</a>
                 </div>
             </div>
         </div>
-
     </main>
 
     <a href="https://wa.me/6285723966466" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-50">
